@@ -1,0 +1,22 @@
+Laravel
+
+XAMPP
+PHP version:
+Composer:
+	
+Terminal
+
+	composer create-project laravel/laravel rr2078
+	To run project
+		"php artisan serve"
+	To access laravel project
+		Type: 127.0.01:8000 or localhost:8000 on your browser address bar
+
+
+PSR Document
+
+Migration:
+	Create database using Mysql
+	Change database name into DB_DATABASE constant into .env file
+	
+	Run: "php artisan migrate" command

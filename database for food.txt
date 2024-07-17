@@ -1,0 +1,134 @@
+users - already exists
+
+settings
+
+id => bigint
+website_name => string
+slogan => string - nullable
+logo => string
+favicon => string 
+header_logo => string - nullable
+footer_logo => string - nullable
+phone - bigint
+optional_phone - bigint - nullable
+mobile - bigint -nullable
+email - string
+optional_email - string - nullable
+address - text
+google_map_link - string - nullable
+facebook_link - string - - nullable
+twitter_link -string- nullable
+insta_link - string- nullable
+youtube_link - string- nullable
+about_website- text- nullable
+opening_hours - text
+status - boolean- default 0
+deleted_at (softdelete)
+created_by - unsigned big int - foreign key from users(id)
+updated_by - unsigned big int -nullable- foreign key from users(id)
+created_at - timestamp()
+updated_at - timestamp()
+
+
+categories
+
+id
+title
+rank
+image
+status
+deleted_at
+updated_at
+created_by
+updated_by
+
+
+foods
+
+id
+category_id
+title
+price
+discount 
+rank
+feature_food_key - booelan
+description
+thumb_image
+feature_image
+icon_image
+status
+deleted_at
+created_at
+updated_at
+created_by
+updated_by
+
+
+food_ratings
+
+id
+food_id
+user_id -nullable
+name
+email
+status
+deleted_at
+created_at
+updated_at
+
+
+customer_reviews
+
+
+id
+name
+image
+job_position
+rank
+rating_value
+description
+
+
+food_blogs
+
+id
+category_id
+title
+slug
+image
+short_description
+description
+status
+deleted_at
+created_at
+updated_at
+created_by
+updated_by
+
+comments
+
+id
+food_blog_id
+name
+email-optional
+comment
+status
+created_at
+updated_at
+
+
+bookings
+
+id
+name
+email
+phone
+booking_for_date
+no_of_person
+created_at
+updated_at
+
+
+
+
+

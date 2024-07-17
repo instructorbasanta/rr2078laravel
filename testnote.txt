@@ -1,0 +1,98 @@
+Route:
+
+MVC
+=> View
+
+To create controller
+php artisan make:controller FrontendController
+
+FrontendController.php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class FrontendController extends Controller
+{
+    //function to load home page
+    function home(){
+        return view('welcome');
+    }
+}
+web.php
+Route::get('/',[\App\Http\Controllers\FrontendController::class,'home']);
+
+
+//To migrate your database table
+
+php artisan migrate
+
+to create new migration
+
+php artisan make:migration create_students_table
+
+php artisan migrate:rollback
+
+php artisan migrate:reset
+
+php artisan migrate:refresh
+
+
+
+Seeder for dummy Data Management
+php artisan db:seed
+
+
+
+
+
+
+Create Model
+
+php artisan make:model Student
+
+
+
+
+
+
+
+
+
+For JS,Image,CSS file 
+create assets folder inside public folder
+create backend folder inside assets and paste all files and folder 
+
+
+Define route for login: routes/web.php add
+Route::get('/login',function(){
+	return view('user.login')
+});
+
+To create view: 
+use folder structure to create file
+example : if view('user.login') 
+	first create user folder inside views folder and create login.blade.php file inside user folder
+
+Change resource path using: assets function 
+
+{{asset('assets/backend/...................')}}
+
+
+
+
+//dashboard route
+
+Route::get('/backend/dashboard',function (){
+    return view('backend.dashboard');
+});
+
+
+
+
+
+
+
+
+
