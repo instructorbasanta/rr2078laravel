@@ -89,6 +89,15 @@ Route::get('/backend/dashboard',function (){
 });
 
 
+Route::get('/backend/setting/create',function (){
+    return view('backend.setting.create');
+})->name('backend.setting.create');
+
+
+Route::get('/backend/setting',function (){
+    return view('backend.setting.index');
+})->name('backend.setting.index');
+
 
 
 

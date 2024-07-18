@@ -24,7 +24,9 @@ Route::get('/about',[\App\Http\Controllers\FrontendController::class,'about']);
 
 Route::get('/login',function (){
     return view('user.login');
-});
+})->name('login');
+
+Route::post('login/verify',[\App\Http\Controllers\UserController::class,'verifyUser'])->name('login.verification');
 
 Route::get('/backend/dashboard',function (){
     return view('backend.dashboard');
