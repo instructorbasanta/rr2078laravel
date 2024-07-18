@@ -27,10 +27,11 @@ Route::get('/login',function (){
 })->name('login');
 
 Route::post('login/verify',[\App\Http\Controllers\UserController::class,'verifyUser'])->name('login.verification');
+Route::get('logout',[\App\Http\Controllers\UserController::class,'logout'])->name('logout');
 
 Route::get('/backend/dashboard',function (){
     return view('backend.dashboard');
-})->name('backend.dashboard');
+})->name('backend.dashboard')->middleware('auth');
 
 
 

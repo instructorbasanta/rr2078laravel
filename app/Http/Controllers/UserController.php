@@ -21,4 +21,9 @@ class UserController extends Controller
             return redirect()->route('login')->withErrors(['email' =>'Credential Not match']);
         }
     }
+
+    function logout(){
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
