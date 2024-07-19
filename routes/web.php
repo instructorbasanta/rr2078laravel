@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Backend\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +33,9 @@ Route::get('/backend/dashboard',function (){
     return view('backend.dashboard');
 })->name('backend.dashboard')->middleware('auth');
 
+//routes for loading student create form
+Route::get('backend/student/create',[StudentController::class,'create'])->name('backend.student.create')->middleware('auth');
+Route::post('backend/student',[StudentController::class,'store'])->name('backend.student.store')->middleware('auth');
 
 
 Route::get('/backend/setting/create',function (){

@@ -100,6 +100,38 @@ Route::get('/backend/setting',function (){
 
 
 
+CRUD Operation 
+
+Create:
+
+Create Controller for your database table
+
+php artisan make:controller StudentController --resource
+and define create method inside controller
+
+Create and define Model:
+
+php artisan make:model Student
+
+Define Route to display insert form:
+
+Route:get('backend/student/create',[StudentController::class,'create')->name('backend.student.create');
+
+//write method details/defination
+
+Create view to display insert form:
+backend/student/create.blade.php
+
+
+
+
+
+
+
+
+
+
+
 
 
 
