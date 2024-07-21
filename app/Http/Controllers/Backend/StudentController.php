@@ -21,4 +21,10 @@ class StudentController extends Controller
 //        dd($request->all());
         Student::create($request->all());
     }
+
+    function index(){
+        $students = Student::orderBy('name')->get();
+        //send data from controller to view
+        return view('backend.student.index',compact('students'));
+    }
 }

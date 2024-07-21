@@ -122,6 +122,13 @@ Route:get('backend/student/create',[StudentController::class,'create')->name('ba
 Create view to display insert form:
 backend/student/create.blade.php
 
+//store
+Route::post('backend/student',[StudentController::class,'store')->name('backend.student.store');
+
+Listing of data from database table to html table
+
+//define route
+Route::get('backend/student',[StudentController::class,'index'])->name('backend.student.index');
 
 
 
