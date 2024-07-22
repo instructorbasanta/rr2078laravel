@@ -41,6 +41,7 @@ Route::get('backend/student',[StudentController::class,'index'])->name('backend.
 
 Route::get('backend/student/{id}',[StudentController::class,'show'])->name('backend.student.show');
 
+Route::delete('backend/student/{id}',[StudentController::class,'destroy'])->name('backend.student.destroy');
 
 
 Route::get('/backend/setting/create',function (){

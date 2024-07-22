@@ -30,6 +30,11 @@
                                 </td>
                                 <td>
                                     <a href="{{route('backend.student.show',$student->id)}}" class="btn btn-primary">View</a>
+                                    <form style="display: inline-block" method="post" action="{{route('backend.student.destroy',$student->id)}}">
+                                        @csrf
+                                        <input type="hidden" name="_method" value="DELETE"/>
+                                        <input type="submit" value="Delete" class="btn btn-danger">
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

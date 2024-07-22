@@ -29,7 +29,13 @@ class StudentController extends Controller
     }
 
     function show($id){
-        $student = Student::find($id);
+        $student = Student::findOrFail($id);
         return view('backend.student.show',compact('student'));
+    }
+
+    function  destroy($id){
+        $student = Student::findOrFail($id);
+        $student->delete();
+        return redirect()->route('backend.student.index');
     }
 }
