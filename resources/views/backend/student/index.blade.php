@@ -16,9 +16,8 @@
                             <th>Name</th>
                             <th>Roll</th>
                             <th>Email</th>
-                            <th>Address</th>
-                            <th>Temp. Address</th>
                             <th>Passout Key</th>
+                            <th>Action</th>
                         </tr>
                         @foreach($students as $key=> $student)
                             <tr>
@@ -26,9 +25,12 @@
                                 <td>{{$student->name}}</td>
                                 <td>{{$student->roll_no}}</td>
                                 <td>{{$student->email}}</td>
-                                <td>{{$student->address}}</td>
-                                <td>{{$student->temp_address}}</td>
-                                <td>{{$student->passout_key}}</td>
+                                <td>
+                                    @include('backend.student.check_passout_status',['passout_key' => $student->passout_key])
+                                </td>
+                                <td>
+                                    <a href="{{route('backend.student.show',$student->id)}}" class="btn btn-primary">View</a>
+                                </td>
                             </tr>
                         @endforeach
                     </table>

@@ -27,4 +27,9 @@ class StudentController extends Controller
         //send data from controller to view
         return view('backend.student.index',compact('students'));
     }
+
+    function show($id){
+        $student = Student::find($id);
+        return view('backend.student.show',compact('student'));
+    }
 }

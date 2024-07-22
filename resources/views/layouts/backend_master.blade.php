@@ -82,7 +82,7 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('backend.student.create')}}">Create</a>
-                    <a class="collapse-item" href="utilities-border.html">List</a>
+                    <a class="collapse-item" href="{{route('backend.student.index')}}">List</a>
                 </div>
             </div>
         </li>

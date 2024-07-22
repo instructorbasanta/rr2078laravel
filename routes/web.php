@@ -39,6 +39,8 @@ Route::post('backend/student',[StudentController::class,'store'])->name('backend
 //listing of data
 Route::get('backend/student',[StudentController::class,'index'])->name('backend.student.index');
 
+Route::get('backend/student/{id}',[StudentController::class,'show'])->name('backend.student.show');
+
 
 
 Route::get('/backend/setting/create',function (){
