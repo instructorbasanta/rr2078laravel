@@ -19,7 +19,12 @@ class StudentController extends Controller
             'email' => 'required|email'
         ]);
 //        dd($request->all());
-        Student::create($request->all());
+        if(Student::create($request->all())){
+            request()->session()->flash('success','Student created successfully');
+        } else {
+            request()->session()->flash('error','Student creation failed');
+        }
+        return redirect()->route('backend.student.index');
     }
 
     function index(){

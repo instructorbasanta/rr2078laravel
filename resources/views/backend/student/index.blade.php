@@ -10,6 +10,7 @@
                     List of students
                 </div>
                 <div class="card-body">
+                   @include('includes.flash_message')
                     <table class="table table-bordered table-responsive">
                         <tr>
                             <th>SN</th>
