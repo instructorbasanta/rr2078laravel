@@ -31,6 +31,8 @@
                                 </td>
                                 <td>
                                     <a href="{{route('backend.student.show',$student->id)}}" class="btn btn-primary">View</a>
+                                    <a href="{{route('backend.student.edit',$student->id)}}" class="btn btn-warning">Edit</a>
+
                                     <form style="display: inline-block" method="post" action="{{route('backend.student.destroy',$student->id)}}">
                                         @csrf
                                         <input type="hidden" name="_method" value="DELETE"/>

@@ -43,4 +43,23 @@ class StudentController extends Controller
         $student->delete();
         return redirect()->route('backend.student.index');
     }
+
+    function edit($id){
+        $student = Student::findOrFail($id);
+        return view('backend.student.edit',compact('student'));
+    }
+
+    function update(Request $request,$id){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email'
+        ]);
+        $student = Student::findOrFail($id);
+        if($student->update($request->all())){
+            request()->session()->flash('success','Student updated successfully');
+        } else {
+            request()->session()->flash('error','Student update failed');
+        }
+        return redirect()->route('backend.student.index');
+    }
 }

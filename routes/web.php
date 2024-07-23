@@ -38,11 +38,14 @@ Route::get('backend/student/create',[StudentController::class,'create'])->name('
 Route::post('backend/student',[StudentController::class,'store'])->name('backend.student.store')->middleware('auth');
 //listing of data
 Route::get('backend/student',[StudentController::class,'index'])->name('backend.student.index');
-
+//listing
 Route::get('backend/student/{id}',[StudentController::class,'show'])->name('backend.student.show');
-
+//edit
+Route::get('backend/student/{id}/edit',[StudentController::class,'edit'])->name('backend.student.edit');
+//update
+Route::put('backend/student/{id}',[StudentController::class,'update'])->name('backend.student.update');
+//delete
 Route::delete('backend/student/{id}',[StudentController::class,'destroy'])->name('backend.student.destroy');
-
 
 Route::get('/backend/setting/create',function (){
     return view('backend.setting.create');
