@@ -10,7 +10,7 @@
                     Create Student
                 </div>
                 <div class="card-body">
-                    <form action="{{route('backend.student.store')}}" method="post">
+                    <form enctype="multipart/form-data" action="{{route('backend.student.store')}}" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -37,6 +37,13 @@
                         <div class="form-group">
                             <label for="temp_address">Address</label>
                             <input type="text" name="temp_address" class="form-control" placeholder="Enter temp_address">
+                        </div>
+                        <div class="form-group">
+                            <label for="photo">Photo</label>
+                            <input type="file" name="file_photo" class="form-control" >
+                            @error('file_photo')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="passout_key">Passout Status</label>

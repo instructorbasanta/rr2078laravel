@@ -135,6 +135,57 @@ Route::get('backend/student',[StudentController::class,'index'])->name('backend.
 
 
 
+//sweet alert
+https://sweetalert2.github.io/
+
+
+//Editor 
+
+https://ckeditor.com/ckeditor-4/demo/#article
+https://www.tiny.cloud/
+
+
+//Datatable
+https://datatables.net/   => client side
+
+https://yajrabox.com/docs/laravel-datatables/11.0  => server side
+
+//For form design
+
+https://laravelcollective.com/docs/6.x/html#installation
+
+
+//for role permission
+ACL :
+https://spatie.be/docs/laravel-permission/v6/introduction
+
+
+//For image resize
+https://image.intervention.io/v3
+
+//Laravel file Manager
+https://github.com/UniSharp/laravel-filemanager
+
+
+//laravel CRUD generator
+https://getcraftable.com/docs/8.0/installation
+
+
+//Mail Testing Platform
+https://mailtrap.io/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

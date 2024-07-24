@@ -17,6 +17,7 @@ class Student extends Model
         'email',
         'address',
         'temp_address',
-        'passout_key'
+        'passout_key',
+        'photo'
     ];
 }

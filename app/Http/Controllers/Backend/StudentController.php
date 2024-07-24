@@ -16,9 +16,15 @@ class StudentController extends Controller
     function store(Request $request){
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'file_photo' => 'required|min:1|max:10000|mimes:jpg,jpeg,bmp,png'
         ]);
-//        dd($request->all());
+        if ($request->hasFile('file_photo')){
+            $file = $request->file('file_photo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move('assets/images/student',$fileName);
+            $request->request->add(['photo' => $fileName]);
+        }
         if(Student::create($request->all())){
             request()->session()->flash('success','Student created successfully');
         } else {
